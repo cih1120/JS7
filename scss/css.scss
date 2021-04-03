@@ -1,0 +1,237 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+h1,
+.h1,
+h2,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-family: "Microsoft JhengHei";
+}
+h2,
+.h2 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+h3,
+.h3 {
+  font-size: 20px;
+}
+h4,
+.h4 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+$primary: #00807e;
+$second: #64c3bf;
+$gray: #818a91;
+$light: #f7f7f7;
+
+@mixin df_center($dir: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: $dir;
+}
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+// ===================================================
+
+.addTicket {
+  @include df_center();
+  padding: 50px;
+}
+.addTicketPanel {
+  @include df_center();
+  justify-content: space-around;
+  width: 85%;
+  max-width: 1024px;
+  padding: 50px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 12px;
+  &__left {
+    @include df_center(column);
+    width: 50%;
+  }
+  &__right {
+    width: 35%;
+  }
+}
+.addTicketForm {
+  &__title {
+    border-bottom: 2px solid $primary;
+    padding-bottom: 4px;
+    margin-bottom: 36px;
+    color: $primary;
+  }
+  &__group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    &_Input {
+      @include df_center();
+      justify-content: space-between;
+      label {
+        font-size: 16px;
+        color: $primary;
+        margin-right: 5px;
+      }
+      input,
+      select,
+      textarea {
+        padding: 5px;
+        display: block;
+        flex-grow: 2;
+        flex-shrink: 1;
+        flex-basis: 0%;
+        color: $gray;
+        background-color: $light;
+        border: 0px;
+        border-bottom: 1px solid $primary;
+      }
+    }
+    &_alert {
+      position: absolute;
+      bottom: -14px;
+      font-size: 12px;
+      color: #994444;
+      right: 0;
+    }
+  }
+  &__btn {
+    float: right;
+    color: #fff;
+    padding: 10px 40px;
+    background: $primary;
+    border-radius: 5px;
+    border: 0px;
+  }
+}
+// ===================================================
+
+.mainContent {
+  @include df_center(column);
+  width: 100%;
+  padding: 50px 0;
+  background-color: $light;
+}
+.searchRow {
+  margin-bottom: 60px;
+  width: 80%;
+  @include df_center();
+  justify-content: space-between;
+}
+.searchBar {
+  @include df_center();
+  width: 60%;
+  max-width: 840px;
+  justify-content: flex-start;
+  &__search {
+    width: 50%;
+    padding: 8px 12px;
+    margin-right: 10px;
+    color: $gray;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  p {
+    color: $gray;
+    font-weight: 300;
+  }
+}
+.searchChart {
+  width: 30vw;
+  height: 30vw;
+  .c3-arc-高雄 {
+    fill: #e68618 !important;
+  }
+  .c3-arc-台中 {
+    fill: #5151d3 !important;
+  }
+  .c3-arc-台北 {
+    fill: #26c0c7 !important;
+  }
+}
+
+.ticketList {
+  width: 85%;
+  max-width: 1024px;
+  @include df_center();
+  justify-content: flex-start;
+}
+.ticketCard {
+  display: block;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: 30px;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  &__top {
+    height: 180px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &_area {
+      padding: 8px 20px;
+      position: absolute;
+      top: -15px;
+      font-size: 14px;
+      color: #fff;
+      background-color: $second;
+    }
+    &_rate {
+      padding: 5px 8px;
+      position: absolute;
+      bottom: -15px;
+      font-size: 14px;
+      color: #fff;
+      background-color: $primary;
+    }
+  }
+  &__content {
+    position: relative;
+    height: 300px;
+    padding: 20px;
+    h2 {
+      color: $primary;
+      font-weight: 600;
+    }
+    hr {
+      margin-bottom: 12px;
+      background-color: $primary;
+    }
+    > h4 {
+      color: $gray;
+    }
+    &_info {
+      width: calc(100% - 40px);
+      position: absolute;
+      bottom: 20px;
+      @include df_center();
+      justify-content: space-between;
+      color: $primary;
+      font-weight: 600;
+      .ticketPrice {
+        @include df_center();
+        span {
+          font-size: 32px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

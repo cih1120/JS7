@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 期中作業 </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/c3.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+</head>
+<body>
+    <section class="addTicket">
+        
+        <div class="addTicketPanel">
+            <div class="addTicketPanel__left">
+                <img src="img/undraw_Traveling_re_weve (1).png">
+                <img src="img/Let’s Travel !.png" alt="Let's Travel">
+            </div>
+            <div class="addTicketPanel__right">
+                <form action="" class="addTicketForm">
+                    <div class="addTicketForm__title">
+                        <h2>
+                            <span><i class="fas fa-plus-circle"></i></span>新增旅遊套票
+                        </h2>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketName">套票名稱</label>
+                            <input type="text" name="套票名稱" id="ticketName" placeholder="請填寫套票名稱">
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketName">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketImg">圖片網址</label>
+                            <input type="text" name="圖片網址" id="ticketImg" placeholder="請填寫圖片網址">
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketImg">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketArea">景點地區</label>
+                            <select name="景點地區" id="ticketArea">
+                                <option value="" disabled selected hidden>請選擇景點地區</option>
+                                <option value="台北">台北</option>
+                                <option value="台中">台中</option>
+                                <option value="高雄">高雄</option>
+                            </select>
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketArea">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketPrice">套票金額</label>
+                            <input type="number" name="套票金額" id="ticketPrice" placeholder="請填寫套票金額" onkeyup="value=value.replace(/[^\d]/g,'')">
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketPrice">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketNum">套票組數</label>
+                            <input type="number" name="套票組數" id="ticketNum" placeholder="請填寫套票組數" onkeyup="value=value.replace(/[^\d]/g,'')">
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketNum">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketRate">套票星級</label>
+                            <input type="number" name="套票星級" id="ticketRate" placeholder="請填寫套票星級" onkeyup="value=value.replace(/[^\d]/g,'')">
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketRate">
+                                 <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="addTicketForm__group">
+                        <div class="addTicketForm__group_Input">
+                            <label for="ticketDect">套票描述</label>
+                            <textarea name="套票敘述" id="ticketDect" placeholder="請填寫套票描述"></textarea>
+                        </div>
+                        <div class="addTicketForm__group_alert">
+                            <p class="alertMessage" data-message="ticketDect">
+                                <!-- 此為必填欄位！ -->
+                            </p>
+                        </div>
+                    </div>
+                    <input type="button" class="addTicketForm__btn h4" value="新增套票">
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <!-- =============================================== -->
+    <section class="mainContent">
+        <!-- 搜尋Bar -->
+        <div class="searchRow">
+            <div class="searchBar">
+                <select name="地區搜尋" class="searchBar__search">
+                    <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+                    <option value="">全部地區</option>
+                    <option value="台北">台北</option>
+                    <option value="台中">台中</option>
+                    <option value="高雄">高雄</option>
+                </select>
+                <p class="searchBar__text h4">本次搜尋結共 3 筆</p>
+            </div>
+            <div class="searchChart" id="c3chart">
+
+            </div>
+        </div>
+
+        <!-- 卡片區 -->
+        <ul class="ticketList">
+            <!-- <li class="ticketCard">
+                <div class="ticketCard__top" style="background-image: url('img/photo-1598954467835-3b0b6fe3be70.png');">
+                    <div class="ticketCard__top_area h3">高雄</div>
+                    <div class="ticketCard__top_rate h4">10</div>
+                </div>
+                <div class="ticketCard__content">
+                    <h2>綠島自由套裝行程</h2>
+                    <hr>
+                    <h4>
+                        嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。
+                    </h4>
+                    <div class="ticketCard__content_info">
+                        <div class="h4 ticketNum">
+                            <span><i class="fas fa-exclamation-circle"></i></span>
+                            剩下最後 8 組
+                        </div>
+                        <div class="h4 ticketPrice">
+                            <h4>TWD<span>$1,280</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </li> -->
+
+
+        </ul>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+</html>
